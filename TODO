@@ -1,0 +1,21 @@
+-	download and install MySQL(do not forget to change database connection props. see: applicationContext.xml)
+-	create a database named "quickstart"
+-	run the following SQL command:
+
+CREATE TABLE 'quickstart'.'Person' (
+  'id' INTEGER UNSIGNED NOT NULL AUTO_INCREMENT,
+  'firstName' VARCHAR(45) NOT NULL,
+  'lastName' VARCHAR(45) NOT NULL,
+  PRIMARY KEY('id')
+)
+
+ENGINE = InnoDB;
+
+-	download jta jar file: http://java.sun.com/products/jta/
+ 	change its extension to .jar
+-	type following maven commands in terminal:
+	$ mvn install:install-file -DgroupId=javax.transaction -DartifactId=jta -Dversion=1.1 -Dpackaging=jar -Dfile=c:\path\to\jar\jta-1.1-classes.jar
+	$ mvn jetty:run
+-	Point your browser to http://localhost:8080/quickstart
+-	type $ mvn eclipse:eclipse
+-	mvn eclipse:eclipse -Dwtpversion=1.0
